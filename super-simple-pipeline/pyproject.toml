@@ -1,0 +1,16 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "super_simple_pipeline"
+version = "1.0.0"
+authors = [
+  { name="Piotr Tchir" },
+]
+description = "A minimal implementation of a data processing pipeline"
+readme = "README.md"
+requires-python = ">=3.8"
+
+[project.urls]
+"Homepage" = "https://github.com/zapp29/python-code-snippets"
