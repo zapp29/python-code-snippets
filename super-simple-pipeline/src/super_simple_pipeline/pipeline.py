@@ -2,7 +2,7 @@ import abc
 import logging
 from typing import Any
 
-from super_simple_pipeline.steps import PreFetcher, DataFetcher, PostProcessor
+from src.super_simple_pipeline.steps import PreFetcher, DataFetcher, PostProcessor
 
 LOG = logging.getLogger(__name__)
 logging.basicConfig(level="INFO")

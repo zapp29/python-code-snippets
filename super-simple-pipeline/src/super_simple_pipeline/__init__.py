@@ -1,2 +1,2 @@
-from super_simple_pipeline.pipeline import Pipeline
-from super_simple_pipeline.steps import PreFetcher, DataFetcher, PostProcessor
+from src.super_simple_pipeline.pipeline import Pipeline
+from src.super_simple_pipeline.steps import PreFetcher, DataFetcher, PostProcessor
