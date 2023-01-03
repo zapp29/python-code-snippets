@@ -1,0 +1,34 @@
+[tool]
+[tool.poetry]
+name = "cookiecutter_generic"
+version = "0.1.0"
+homepage = "https://github.com/zapp29/cookiecutter_generic"
+description = "Top-level package for cookiecutter-generic."
+authors = ["Piotr Tchir <>"]
+readme = "README.rst"
+license =  "MIT"
+classifiers=[
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: MIT License',
+    'Natural Language :: English',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+]
+packages = [
+    { include = "cookiecutter_generic" },
+    { include = "tests", format = "sdist" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4"
+
+[tool.poetry.scripts]
+from_config = 'cookiecutter_generic.run:from_config'
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+

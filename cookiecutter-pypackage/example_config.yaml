@@ -1,0 +1,12 @@
+default_context:
+    full_name: "Piotr Tchir"
+    email: ""
+    github_username: "zapp29"
+    project_name: "Python Boilerplate"
+    project_slug: "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"
+    project_short_description: "Python Boilerplate contains all the boilerplate you need to create a Python package."
+    pypi_username: "zapp29"
+    version: "0.1.0"
+    command_line_interface: "n"
+    create_author_file: "y"
+    open_source_license: "MIT"
