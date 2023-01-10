@@ -24,7 +24,7 @@ if __name__ == '__main__':
     os.system("poetry add --group dev nox")
     os.system("poetry add --group dev pre-commit")
 
-    if '{{ initialize }}' == 'y':
+    if '{{ cookiecutter.initialize }}' == 'y':
         os.system("poetry lock")
         os.system("poetry install")
         os.system("poetry build")
