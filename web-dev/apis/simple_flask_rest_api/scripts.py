@@ -15,3 +15,7 @@ def docs():
 
 def app():
     subprocess.run(["flask", "--app", "simple_flask_rest_api.app", "run"])
+
+
+def debug():
+    subprocess.run(["flask", "--app", "simple_flask_rest_api.app", "--debug", "run"])
