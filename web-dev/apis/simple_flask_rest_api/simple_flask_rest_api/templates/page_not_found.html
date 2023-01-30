@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>Page Not Found</title>
+    </head>
+    <body>
+        <h1>ERROR</h1>
+        <h2>RESPONSE ELEMENTS</h2>
+        <ul id="response_elements">
+            {% for item in response_elements %}
+            <li><b>{{item[0]}}</b>: {{item[1]}}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

@@ -8,6 +8,7 @@ app = Flask(__name__)
 TODO:
 - [ ] Add a route for /upload that accepts POST requests and saves the file to the uploads folder
 - [ ] Add menu with hyperlinks to all routes in the index page
+- [ ] Check what the pin is for
 """
 
 # use app.get() for GET requests
@@ -87,11 +88,26 @@ def set_cookie():
     response.set_cookie('answer', '43')
     return response
 
+
 @app.route('/get_cookie', methods=['GET'])
 def get_cookie():
     # get cookie
     return request.cookies.get('answer')
 
+
 @app.route('/redirect')
 def redirect_():
     return redirect(url_for('index'))
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    response = error.get_response()
+    response_elements = [
+        (el, eval('response.'+el, {'response': response}))
+        for el in dir(response) if not el.startswith('_')
+    ]
+    return render_template(
+        'page_not_found.html',
+        response_elements=response_elements,
+    ), 404
