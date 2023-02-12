@@ -32,6 +32,7 @@ fix = 'scripts:fix'
 docs = 'scripts:docs'
 app = 'scripts:app'
 debug = 'scripts:debug'
+init = 'scripts:init'
 
 [tool.poetry.group.dev.dependencies]
 nox = "^2022.11.21"

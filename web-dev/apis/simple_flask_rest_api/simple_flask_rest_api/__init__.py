@@ -4,6 +4,7 @@ from flask import Flask, request, url_for, render_template, make_response, redir
 from markupsafe import escape
 from werkzeug.utils import secure_filename
 
+from .db import db
 
 """
 TODO:
@@ -16,8 +17,8 @@ TODO:
 
 def config_app(test_config, app):
     app.config.from_mapping(
-        SECRET_KEY='dev', # for DEV use ONLY; change this in production for 'secrets.token_hex()' or set SECRET_KEY in config.py
-        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
+        SECRET_KEY='dev', # FOR DEV USE ONLY; change this in production for 'secrets.token_hex()' or set SECRET_KEY in config.py
+        DATABASE=os.path.join(app.instance_path, 'simple_flask_rest_api.sqlite'),
     )
     if test_config is None:
         # load the PROD config, if it exists, when not testing
@@ -172,5 +173,9 @@ def create_app(test_config=None):
     @app.route('/show_flashed')
     def show_flashed_message():
         return get_flashed_messages(with_categories=True)
+
+    db.init_app(app)
+
+
 
     return app

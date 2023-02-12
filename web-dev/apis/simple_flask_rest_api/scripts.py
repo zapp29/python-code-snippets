@@ -19,3 +19,7 @@ def app():
 
 def debug():
     subprocess.run(["flask", "--app", "simple_flask_rest_api", "--debug", "run"])
+
+
+def init():
+    subprocess.run(["flask", "--app", "simple_flask_rest_api", "init-db"])
