@@ -5,7 +5,6 @@ from service_one_string import ServiceOneString
 from service_two_string import ServiceTwoString
 
 if __name__ == "__main__":
-    app = App("Main")
-    app.run(ServiceOneInt(), ServiceTwoString())
-
-    # todo: implement service factory
+    # app factory function
+    app = App("Main", ServiceOneInt(), ServiceTwoString())
+    app.run()

@@ -1,0 +1,61 @@
+@startuml
+title Traditional dependencies
+
+package service_one {
+  class ServiceOne {
+    make_one()
+  }
+}
+
+package service_two {
+  class ServiceTwo {
+    make_two()
+  }
+}
+
+package app {
+  class App {
+    run(service_one: ServiceOne, \n\tservice_two: ServiceTwo)
+  }
+  App -.> .ServiceOne: executes
+  App -.> .ServiceTwo: executes
+  App --> .ServiceOne: depends on
+  App --> .ServiceTwo: depends on
+}
+
+@enduml
+@startuml
+title Dependency Injection
+
+package service_one {
+  class ServiceOne {
+    make_one()
+  }
+  ServiceOne -up-|> app.OneMaker
+}
+
+package service_two {
+  class ServiceTwo {
+    make_two()
+  }
+  ServiceTwo -up-|> app.TwoMaker
+}
+
+package app {
+  abstract OneMaker {
+    {abstract} make_one()
+  }
+  abstract TwoMaker {
+    {abstract} make_two()
+  }
+  class App {
+    run(one_maker: OneMaker, \n\ttwo_maker: TwoMaker)
+  }
+  App -left-> OneMaker: depends on
+  App -right-> TwoMaker: depends on
+
+  app.App -.> .ServiceOne: executes
+  app.App -.> .ServiceTwo: executes
+}
+
+@enduml
