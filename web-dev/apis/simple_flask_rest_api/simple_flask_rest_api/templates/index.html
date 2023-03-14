@@ -2,10 +2,17 @@
 <title>Index</title>
 <h1>Index</h1>
 <ul>
-    <li><a href="{{url_for('index')}}">Home</a></li>
-    <li><a href="{{url_for('methods')}}">Methods</a></li>
-    <li><a href="{{url_for('variables', var='name')}}">Variables</a></li>
-    <li><a href="{{url_for('template', name=name)}}">Template</a></li>
-    <li><a href="{{url_for('redirect_')}}">Redirect</a></li>
+    <li><a href="{{ url_for('index.index') }}">Home</a></li>
+    <li><a href="{{ url_for('index.methods') }}">Methods</a></li>
+    <li><a href="{{ url_for('index.variables', var='name') }}">Variables</a></li>
+    <li><a href="{{ url_for('index.subpath', subpath='subpath') }}">Path</a></li>
+    <li><a href="{{ url_for('index.show_urls') }}">URLs</a></li>
+    <li><a href="{{ url_for('index.template', name=name) }}">Template</a></li>
+    <li><a href="{{ url_for('index.show_request') }}">Show Request</a></li>
+    <li><a href="{{ url_for('index.redirect_') }}">Redirect</a></li>
     <li><a href="non_existsing_url">Page Not Found</a></li>
+    <li><a href="{{ url_for('index.sessions') }}">Sessions</a></li>
+    <li><a href="{{ url_for('index.flash_message') }}">Flash</a></li>
+    <li><a href="{{ url_for('index.show_flashed_message') }}">Show flashed</a></li>
+    <li><a href="{{ url_for('index.upload_file') }}">Upload File</a></li>
 </ul>
