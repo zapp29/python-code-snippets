@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from typing import Type, Union
 
 
 class OneMaker(ABC):
@@ -13,6 +14,23 @@ class TwoMaker(ABC):
         pass
 
 
+TMaker = Union[OneMaker, TwoMaker]
+
+
+class AbstractServiceFactory(ABC):
+    @staticmethod
+    @abstractmethod
+    def make_service(service: Type[TMaker]) -> TMaker:
+        pass
+
+
+class AbstractAppFactory(ABC):
+    @staticmethod
+    @abstractmethod
+    def make_app(name: str, one_maker: Type[TMaker], two_maker: Type[TMaker]) -> "App":
+        pass
+
+
 class App:
     def __init__(self, name, one_maker: OneMaker, two_maker: TwoMaker):
         self.name = name
@@ -23,4 +41,3 @@ class App:
         one = self.one_maker.make_one()
         two = self.two_maker.make_two()
         print(f"{self.name} is running {one} and {two}")
-

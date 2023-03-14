@@ -27,18 +27,22 @@ package app {
 @startuml
 title Dependency Injection
 
-package service_one {
+package services {
+  class ServiceFactory {
+    make_service()
+  }
+  ServiceFactory -up-|> app.AbstractServiceFactory
+
   class ServiceOne {
     make_one()
   }
   ServiceOne -up-|> app.OneMaker
-}
 
-package service_two {
   class ServiceTwo {
     make_two()
   }
   ServiceTwo -up-|> app.TwoMaker
+
 }
 
 package app {
@@ -48,14 +52,28 @@ package app {
   abstract TwoMaker {
     {abstract} make_two()
   }
+  abstract AbstractServiceFactory {
+    {abstract} make_service()
+  }
+  abstract AbstractAppFactory {
+    {abstract} make_app()
+  }
   class App {
     run(one_maker: OneMaker, \n\ttwo_maker: TwoMaker)
   }
   App -left-> OneMaker: depends on
   App -right-> TwoMaker: depends on
-
-  app.App -.> .ServiceOne: executes
-  app.App -.> .ServiceTwo: executes
 }
+
+package main {
+  class AppFactory {
+    make_app()
+  }
+  AppFactory --|> app.AbstractAppFactory
+  AppFactory --> app.App: depends on
+}
+main --> ServiceOne: depends on
+main --> ServiceTwo: depends on
+main --> ServiceFactory: depends on
 
 @enduml
