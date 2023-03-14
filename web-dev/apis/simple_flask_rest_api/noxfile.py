@@ -16,7 +16,7 @@ def fix(session):
     # run
     session.run("black", ".")
     session.run("isort", ".")
-    session.run("mypy")
+    session.run("mypy", ".")
 
 
 @nox.session(python=["3.9", "3.10", "3.11"])
