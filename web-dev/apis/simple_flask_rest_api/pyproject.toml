@@ -4,7 +4,7 @@ name = "simple_flask_rest_api"
 version = "0.1.0"
 homepage = "https://github.com/zapp29/simple_flask_rest_api"
 description = "Top-level package for simple-flask-rest-api."
-authors = ["Piotr Tchir <>"]
+authors = ["Piotr Tchir <piotr.tchir@codeaddicts.pl>"]
 readme = "README.rst"
 license =  "MIT"
 classifiers=[
@@ -27,12 +27,13 @@ python = ">=3.9,<4"
 flask = "^2.2.2"
 
 [tool.poetry.scripts]
-tests = 'scripts:tests'
-fix = 'scripts:fix'
-docs = 'scripts:docs'
-app = 'scripts:app'
-debug = 'scripts:debug'
 init = 'scripts:init'
+fix = 'scripts:fix'
+tests = 'scripts:tests'
+docs = 'scripts:docs'
+debug = 'scripts:debug'
+app = 'scripts:app'
+deploy = 'scripts:deploy'
 
 [tool.poetry.group.dev.dependencies]
 nox = "^2022.11.21"
@@ -44,6 +45,9 @@ build-backend = "poetry.masonry.api"
 
 [tool.isort]
 profile = "black"
+
+[tool.pytest]
+testpaths = "tests"
 
 [tool.mypy]
 ignore_missing_imports = true
