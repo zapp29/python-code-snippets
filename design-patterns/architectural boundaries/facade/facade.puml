@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class PreorderTreeTravelrsal
+class InorderTreeTravelrsal
+class PostorderTreeTravelrsal
+class NormalOrderPresenter
+class ReverseOrderPresenter
+class Controller
+class Node
+
+Controller ..> PreorderTreeTravelrsal
+Controller ..> InorderTreeTravelrsal
+Controller ..> PostorderTreeTravelrsal
+Controller .u.> Node
+
+PreorderTreeTravelrsal ..> NormalOrderPresenter
+InorderTreeTravelrsal ..> NormalOrderPresenter
+PostorderTreeTravelrsal ..> NormalOrderPresenter
+PreorderTreeTravelrsal ..> ReverseOrderPresenter
+InorderTreeTravelrsal ..> ReverseOrderPresenter
+PostorderTreeTravelrsal ..> ReverseOrderPresenter
+
+@enduml
