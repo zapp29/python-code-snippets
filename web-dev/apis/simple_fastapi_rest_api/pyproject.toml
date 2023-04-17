@@ -1,0 +1,50 @@
+[tool]
+[tool.poetry]
+name = "simple_fastapi_rest_api"
+version = "0.1.0"
+homepage = "https://github.com/zapp29/simple_fastapi_rest_api"
+description = "Top-level package for simple-fastapi-rest-api."
+authors = ["Piotr Tchir <>"]
+readme = "README.rst"
+license =  "MIT"
+classifiers=[
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: MIT License',
+    'Natural Language :: English',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+]
+packages = [
+    { include = "simple_fastapi_rest_api" },
+    { include = "tests", format = "sdist" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4"
+fastapi = "^0.95.1"
+uvicorn = {extras = ["standard"], version = "^0.21.1"}
+
+[tool.poetry.scripts]
+app = 'scripts:app'
+tests = 'scripts:tests'
+fix = 'scripts:fix'
+docs = 'scripts:docs'
+
+
+
+[tool.poetry.group.dev.dependencies]
+nox = "^2022.11.21"
+pre-commit = "^3.2.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+ignore_missing_imports = true

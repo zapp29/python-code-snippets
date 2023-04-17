@@ -1,3 +1,0 @@
-FROM amazon/aws-cli
-
-RUN aws lightsail create-container-service --service-name flask-service \ --power small --scale 1

@@ -42,11 +42,11 @@ def create_app(test_config=None):
     app.config['ALLOWED_EXTENSIONS'] = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
     app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000
 
-    import db
+    from . import db
 
     db.init_app(app)
 
-    import views
+    from . import views
 
     app.register_blueprint(views.index_blueprint)
 
@@ -54,6 +54,3 @@ def create_app(test_config=None):
 
 UPLOAD_FOLDER = '/path/to/the/uploads'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-
-if __name__ == '__main__':
-    create_app().run(host='0.0.0.0', port=5000)
