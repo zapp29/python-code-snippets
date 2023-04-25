@@ -38,7 +38,7 @@ python = ">=3.9,<4"
 
 [tool.poetry.scripts]
 tests = 'scripts:tests'
-fix = 'scripts:fix'
+fixes = 'scripts:fixes'
 docs = 'scripts:docs'
 {% if cookiecutter.command_line_interface|lower == 'click' -%}
 {{ cookiecutter.project_slug }} = '{{ cookiecutter.project_slug }}.cli:main'

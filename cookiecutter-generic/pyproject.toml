@@ -23,7 +23,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.9,<4"
+python = ">=3.11,<4"
 
 [tool.poetry.scripts]
 from_config = 'cookiecutter_generic.run:from_config'

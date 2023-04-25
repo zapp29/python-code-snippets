@@ -9,7 +9,7 @@ def tests():
 
 def fix():
     subprocess.run(
-        ['nox', '-s', 'fix']
+        ['nox', '-s', 'fixes']
     )
 
 

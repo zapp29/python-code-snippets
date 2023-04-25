@@ -8,7 +8,7 @@ def docs(session) -> None:
 
 
 @nox.session
-def fix(session):
+def fixes(session):
     # install
     session.install("black")
     session.install("isort")
