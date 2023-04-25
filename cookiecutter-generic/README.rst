@@ -1,5 +1,3 @@
-[![Tests](https://github.com/<your-username>/hypermodern-python/workflows/Tests/badge.svg)](https://github.com/<your-username>/hypermodern-python/actions?workflow=Tests)
-
 ====================
 cookiecutter-generic
 ====================
@@ -22,18 +20,15 @@ A cookiecutter to generate a generic project structure.
 
 
 * Free software: MIT
-* Documentation: https://cookiecutter-generic.readthedocs.io.
 
 
 Features
 --------
 
-* TODO
+* use config file to configure the project (see example in ``example_config.yaml``)
+* to run type: ``poetry run from_config [config-file-name]``
 
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `briggySmalls/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`briggySmalls/cookiecutter-pypackage`: https://github.com/briggySmalls/cookiecutter-pypackage
+This package was created with Cookiecutter
